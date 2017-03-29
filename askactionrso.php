@@ -28,6 +28,7 @@
 	$email = $_GET['email'];
 	$user = $_GET['userID'];
 	$state = $_GET['state'];
+	$type = $_GET['type'];
 	
 	$sql="INSERT INTO inrso (rsoID, studentID)
 	VALUES ('$rso', '$email')";
@@ -49,7 +50,7 @@
 	mysqli_close($conn)
 
 ?>
-	<a href="rso.php?id=<?php echo $rso;?>&userID=<?php echo $user?>" class = "button"> Return to RSO Page </a>
+	<a href="rso.php?id=<?php echo $rso;?>&userID=<?php echo $user?>&type=<?php echo $type?>" class = "button"> Return to RSO Page </a>
 	<p>
 
  </body>

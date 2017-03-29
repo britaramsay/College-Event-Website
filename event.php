@@ -2,6 +2,7 @@
  <head>
   <title>Event - Main</title>
 		<link rel="stylesheet" type="text/css" href="style.css" />
+		
  </head>
  <body>
 	
@@ -40,12 +41,33 @@
 		
 		echo "For more information please contact: <br>";
 		echo "Email: ".$row["email"]."<br>Phone: ".$row["phone"];
-	mysqli_close($conn)
 
 ?>
-	
-	<p>
-	<a href="browseevents.php?userID=<?php echo $user; ?>&type=<?php echo $type?>" class="button">Return to Events</a>
 
+	<br><br><a href="browseevents.php?userID=<?php echo $user; ?>&type=<?php echo $type?>" class="button">Return to Events</a>
+
+	<form method ='POST' action='askactioncomment.php?userID=<?php echo $user?>&type=<?php echo $type?>&event=<?php echo $event?>'>
+		<h3>Leave a Comment:</h3>
+		<textarea name='comment' id='comment'></textarea><br />		
+		<input type='submit' value='Submit' />  
+	</form>
+
+	
+	
+	<?php 
+	$result = mysqli_query($conn, "SELECT comment, username FROM comments WHERE eventID = '$event'");
+			// View Results
+			if (mysqli_num_rows($result) > 0) {
+				echo '<h3>'."Comments".'</h3>';
+				while($row = mysqli_fetch_assoc($result)) {
+					echo '<p>'."''".$row["comment"]."''"." by ".$row["username"];					
+				}
+			} 
+			else 
+				echo '<h3>'."No comments".'</h3>';
+	
+	mysqli_close($conn)
+	?>
+	
  </body>
 </html>

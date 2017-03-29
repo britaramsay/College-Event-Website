@@ -9,29 +9,34 @@
 	if ($conn->connect_error) {
 		 die("Connection failed: " . $conn->connect_error);
 	} 
-	session_start();
+
 	mysqli_select_db($conn, 'root');
 	
+	session_start();
 	$user = $_GET['userID'];
 	$type = $_GET['type'];
-	
-	$sql="INSERT INTO events (name, date, time, category, email, phone, discription)
-	VALUES ('$_POST[name]', '$_POST[date]', '$_POST[time]', '$_POST[category]', '$_POST[email]', '$_POST[phone]', '$_POST[discription]')";
+	$event = $_GET['event'];
+
+	$sql="INSERT INTO comments (eventID, comment, username)
+	VALUES ('$event', '$_POST[comment]', '$user')";
 	
 	if (!mysqli_query($conn, $sql)){
 		die('Error: ' . mysql_error());}
-	echo '<p>'."Event Added";
+	echo '<h3>'."Left Comment";
  
 	mysqli_close($conn)
 
 ?>
 <html>
 	<head>
-		<title>Added University</title>
+		<title>Student Registration</title>
 		<link rel="stylesheet" type="text/css" href="style.css" />
 	</head>
-	<body>
-		<br><br>
-		<a href="adminmain.php?userID=<?php echo $user?>&type=<?php echo $type?>?" class = "button">Return to Admin Homepage</a>
+	<body><br><br>
+		
+		
+		<a href='event.php?id=<?php echo $event ?>&userID=<?php echo $user; ?>&type=<?php echo $type?>' class = "button">Return to Event Page<br></a>
+		</br>
+				
 	</body>
 </html>

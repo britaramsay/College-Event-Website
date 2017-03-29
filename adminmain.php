@@ -13,9 +13,9 @@
 	
 	?>
 
-	<a href = "adminadd.php?userID=<?php echo $user ?>&usertype=Admin" class = "button" type = "submit">Add an Event<a>
+	<a href = "adminadd.php?userID=<?php echo $user ?>&type=Admin" class = "button" type = "submit">Add an Event<a>
 	<br>
-	<a href = "browseevents.php?userID=<?php echo $user?>&usertype=Admin" class = "button">Browse Events</a>
+	<a href = "browseevents.php?userID=<?php echo $user?>&type=Admin" class = "button">Browse Events</a>
 	
  </body>
 </html>

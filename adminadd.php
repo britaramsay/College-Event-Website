@@ -10,11 +10,11 @@
 	<?php
 		session_start();
 		$user = $_GET['userID'];
-		$type = $_GET['usertype'];
-		echo $user;?>
+		$type = $_GET['type'];
+	?>
 	
 	<!--Verify? inputed values on askaction.php-->
-	<form method='POST' action='askactionadmin.php?userID=<?php echo $user ?>'>
+	<form method='POST' action='askactionadmin.php?userID=<?php echo $user ?>&type=<?php echo $type ?>'>
 		<p>Name:
 		<input type='text' name='name' /></br>
 		<br>Date:
