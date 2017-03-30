@@ -51,17 +51,39 @@
 			else 
 				echo "No RSOs";
 			echo '<h3>'."Available RSOs".'</h3>';
-			echo '<h4>'."Need a query that find rsoIDs which sudentID is not associated with".'</h4>';
-			$result3 = mysqli_query($conn, "SELECT rsoID, studentID FROM inrso");
-				if (mysqli_num_rows($result3) > 0) {
-					while($row3 = mysqli_fetch_assoc($result3)) {
-						echo $row3["rsoID"]." ".$row3["studentID"].'<br>';
+			$result3 = mysqli_query($conn, "SELECT * FROM rsos");
+			if (mysqli_num_rows($result3) > 0) {
+				while($row3 = mysqli_fetch_assoc($result3)) {
+					$temp = $row3["rsoID"];
+					$result4 = mysqli_query($conn, "SELECT studentID, rsoID FROM inrso 
+						WHERE rsoID = '$temp' AND studentID = '$stemail'");
+					if (mysqli_num_rows($result4) < 1) {
+
+						$rsoID = $row3["rsoID"];
+					
+						// Preview RSOs
+						echo '<p>'.$row3["name"].'<br>'." Admin: ".$row3["adminID"];
+						// Link to individual RSO page
+						?>
+						<a href='rso.php?id=<?php echo $rsoID; ?>&userID=<?php echo $user;?>&type=<?php echo $type?>'>View<br></a>
+						</br>
+						<?php
+
 					}
-				}
+					else{
+					}
+
 						
-		
-			// "SELECT rsoID FROM inrso EXCEPT
-			//	(SELECT rsoID FROM inrso WHERE studentID = '$stemail')"
+						
+						
+					}
+			}
+			else{
+			}
+						
+					// if not show $row["rsoID"]
+				
+	 
 			
 			// Not show available RSOs
 			// Close sql connection

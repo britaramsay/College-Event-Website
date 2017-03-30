@@ -84,8 +84,6 @@
 	
 </p>
 	Implement:<br>
-	Change to leave RSO if already a member<br>
-	Need to save students email as variable $email<br>
 	View events by this RSO, send $rso, relate events to rso
 	
  </body>

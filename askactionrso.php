@@ -32,7 +32,7 @@
 	
 	$sql="INSERT INTO inrso (rsoID, studentID)
 	VALUES ('$rso', '$email')";
-	$sql1="DELETE FROM inrso WHERE studentID = '$email'";
+	$sql1="DELETE FROM inrso WHERE studentID = '$email' AND rsoID ='$rso'";
 	//Implement: Dont allow duplicate values
 	if($state == "Join"){
 		echo '<p><h3>'."Trying to Join".'</h3></p>';
