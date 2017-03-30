@@ -29,7 +29,7 @@
 ?>
 <html>
 	<head>
-		<title>Student Registration</title>
+		<title>Leaving A Comment</title>
 		<link rel="stylesheet" type="text/css" href="style.css" />
 	</head>
 	<body><br><br>

@@ -17,5 +17,6 @@
 	<br>
 	<a href = "browseevents.php?userID=<?php echo $user?>&type=Admin" class = "button">Browse Events</a>
 	
+	<br><br><a href = "logout.php" class = "button">Logout</a>
  </body>
 </html>

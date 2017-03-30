@@ -14,10 +14,7 @@
 		<input type='text' name='uid' /></br>
 		<br>Password:
 		<input type='password' name='pwd' /></br><br>
-		<input type='radio' name='usertype' value="Student">Login as Student<br>
-		<input type='radio' name='usertype' value="Admin">Login as Admin
-		<br>
-		<br><input type='submit' value='Login' name='submit' />
+		<input type='submit' value='Login' name='submit' />
 	</form>
 	
 	
