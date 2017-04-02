@@ -12,13 +12,23 @@
 
 	mysqli_select_db($conn, 'root');
 	
-	$sql="INSERT INTO students (firstName, lastName, university, email, username, password)
-	VALUES ('$_POST[firstName]', '$_POST[lastName]', '$_POST[school]', '$_POST[email]', '$_POST[username]', '$_POST[password]')";
-	
+	if($_POST["password"] != $_POST["password2"]){
+		die('Error: Passwords do not match.');}
+
+	$sql="INSERT INTO users(firstName, lastName, username, password)
+	VALUES ('$_POST[firstName]', '$_POST[lastName]', '$_POST[username]', '$_POST[password]')";
+
+	$sql1="INSERT INTO students(username, email, university)
+	VALUES ('$_POST[username]', '$_POST[email]', '$_POST[school]')";
+ 
 	if (!mysqli_query($conn, $sql)){
 		die('Error: ' . mysql_error());}
+
+	if (!mysqli_query($conn, $sql1)){
+		die('Error: ' . mysql_error());}
+
 	echo "Registered as Student";
- 
+
 	mysqli_close($conn)
 
 ?>
