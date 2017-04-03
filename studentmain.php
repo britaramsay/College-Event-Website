@@ -18,8 +18,6 @@
 		<!--Link to browse events-->
 		<a href = 'browseevents.php?userID=<?php echo $user; ?>&type=<?php echo $type?>' class = "button">Browse Events</a>
 		<br>
-		View University Events			$stuUniv</br>
-		View Events By Student's RSOs	$stuRSOs
 		<?php			
 			echo '<p>'."Logged in as ".$user;
 		?>
