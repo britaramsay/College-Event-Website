@@ -18,9 +18,12 @@
 			echo "Failed to connect to MySQL: " . mysqli_connect_error();
 		}
 		
-		// Must save selected state, city and move them to
-		// this page as php variables to go into query
-		// 
+		 
+		session_start();
+		$user = $_GET['userID'];
+		$type = 'superadmin';
+	
+		
 		$result = mysqli_query($con,"SELECT * FROM Universities");
 		echo '<p>';
 		echo "<table border='1'>
@@ -49,6 +52,6 @@
 	?>
 	
 	<p>
-	<a href="superadminmain.php" class="button">Return to SuperAdmin Homepage</a>
+	<a href="superadminmain.php?userID=<?php echo $user ?>" class="button">Return to SuperAdmin Homepage</a>
 	</body>
 </html>

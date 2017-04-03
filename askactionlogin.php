@@ -27,19 +27,30 @@
 		echo '<p>'."Wrong Username or Password".'<br>';
 		?><a href = "login.php" class = "button">Try Again</a><?php
 	}
-	else{
+	else{//A user, check if student
 		$sqlstu = "SELECT * FROM students WHERE username = '$uid'";
 		$result = mysqli_query($conn, $sqlstu);
 		
 		$rowstu = mysqli_fetch_assoc($result);
 		
-		if(!$rowstu){
+		if(!$rowstu){//If not in students check admins
 			$sqlad = "SELECT * FROM admins WHERE username = '$uid'";
 			$result = mysqli_query($conn, $sqlad);
 		
 			$rowsad = mysqli_fetch_assoc($result);
 			if(!$rowsad){
 				// check superadmin
+				$sqlsup = "SELECT * FROM superadmins WHERE username = '$uid'";
+				$result = mysqli_query($conn, $sqlsup);
+		
+				$rowssup = mysqli_fetch_assoc($result);
+				if(!$rowssup){
+					echo '<p>'."Username error";
+				}
+				else{
+					echo '<p>'."Logged in as ".$row["firstName"]." ".$row["lastName"].'<br><br>';
+					?><a href = 'superadminmain.php?userID=<?php echo $uid; ?>' class = "button">Go to SuperAdmin Homepage</a><?php
+				}
 			}
 			else{
 				echo '<p>'."Logged in as ".$row["firstName"]." ".$row["lastName"].'<br><br>';

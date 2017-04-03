@@ -9,7 +9,9 @@
 	if ($conn->connect_error) {
 		 die("Connection failed: " . $conn->connect_error);
 	} 
-
+	session_start();
+	$user=$_GET['userID'];
+	
 	mysqli_select_db($conn, 'root');
 	
 	$sql="INSERT INTO Universities (name, city, state, numStudents, discription)
@@ -30,6 +32,7 @@
 	</head>
 	<body>
 		<br><br>
-		<a href = "superadminmain.php" class = "button">Return to SuperAdmin Homepage</a>
+		<a href = "superadminmain.php?userID=<?php echo $user; ?>" class = "button">Return to SuperAdmin Homepage</a>
+		Bonus Feature:  narrowing search, populate dropdown from db
 	</body>
 </html>
