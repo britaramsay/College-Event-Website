@@ -15,9 +15,10 @@
 		?>
 		
 		<br><a href='browsersos.php?userID=<?php echo $user; ?>&type=<?php echo $type?>' class = "button">Browse RSOs<br></a>
-		</br>
 		
 		
+		<a href='studentcreate.php?userID=<?php echo $user; ?>&type=<?php echo $type?>' class = "button">Create an RSO<br></a>
+		<br><br>
 		<a href = 'browseevents.php?userID=<?php echo $user; ?>&type=<?php echo $type?>' class = "button">Browse Events</a>
 		<br>
 		View University Events			$stuUniv</br>

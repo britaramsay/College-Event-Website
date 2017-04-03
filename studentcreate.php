@@ -1,7 +1,7 @@
 <html>
  <head>
   <title> Student - Create RSO </title>
-  <link rel="stlesheet" tpe = "text/css" href="style.css"/>
+  <link rel="stylesheet" tpe = "text/css" href="style.css"/>
  </head>
  <body>
 	<p><h2>College Event Website</h2></p>
