@@ -6,6 +6,7 @@
 	<body>
 		<h2>College Event Website</h2>
 		<h3>Welcome Student!</h3>
+		<!--Get username and set user type-->
 		<?php 
 			session_start();
 			$user = $_GET['userID'];
@@ -18,9 +19,11 @@
 		<!--Link to browse events-->
 		<a href = 'browseevents.php?userID=<?php echo $user; ?>&type=<?php echo $type?>' class = "button">Browse Events</a>
 		<br>
+		<!--Shows current user-->
 		<?php			
 			echo '<p>'."Logged in as ".$user;
 		?>
+		<!--Logout button-->
 		<a href = "logout.php" class = "button2">Logout</a>
 	</body>
 </html>

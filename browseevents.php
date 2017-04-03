@@ -82,13 +82,11 @@
 								} else {
 									echo "No Public Events";
 								}
-							
 							}
 						}
 						else{
 							echo '<p>'."No events by this RSO";
 						}
-						
 					}
 				}
 				else{
@@ -134,22 +132,19 @@
 								} else {
 									echo "No Public Events";
 								}
-							
 							}
 						}
 						else{
 							echo '<p>'."No events by this RSO";
-						}
-						
+						}	
 					}
 				}
 				else{
-					echo '<p>'."Not in any RSOs";
-					
+					echo '<p>'."Not in any RSOs";	
 				}
 			}
 			// Get Private events
-			echo '<h3>'."Private Events at Your University".'</h3>';
+			echo '<h3>'."Private Events at ".$school.'</h3>';
 			$resultpriv = mysqli_query($con, "SELECT eventID FROM privateevents WHERE university = '$school'");
 			if (mysqli_num_rows($resultpriv) > 0) {
 					// get private eventIDs for that school
@@ -180,13 +175,6 @@
 			else{
 				echo '<p>'."No private events by this University";
 			}
-						
-				
-			
-			
-			
-		
-			
 			
 			
 			if($type == "Admin"){

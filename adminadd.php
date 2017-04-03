@@ -32,7 +32,7 @@
 		<br><input type='submit' value='Create Event' name='submit' />
 	</form>
 	
-	<a href="adminmain.php?userID=<?php echo $user; ?>&usertype=<?php echo $type?>" class = "button">Return to Admin Homepage</a>
+	<a href="adminmain.php?userID=<?php echo $user; ?>" class = "button">Return to Admin Homepage</a>
 	
  </body>
 </html>
