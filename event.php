@@ -45,18 +45,25 @@
 		$sql = "SELECT locationID FROM held_at WHERE eventID = $event";
 		$result = mysqli_query($conn, $sql);
 		$row = mysqli_fetch_assoc($result);
+		if(!$row){
+			echo '<p>'."";
+		}
+		else{
 		$location = $row['locationID'];
 		$sql = "SELECT name, image FROM locations WHERE locationID = '$location'";
 		$result = mysqli_query($conn, $sql);
 		$row = mysqli_fetch_assoc($result);
 		echo '<p>'."Held at ".$row['name'].'<br>';
 		$image = $row['image'];
+		?><br><img src="<?php echo $image; ?>" style="width:304px;height:228px;"><br><br>
+		<?php
+		}
+		// if no image?
 		
 ?>
 
-	<br><img src="<?php echo $image; ?>" style="width:304px;height:228px;">
 
-	<br><br><a href="browseevents.php?userID=<?php echo $user; ?>&type=<?php echo $type?>" class="button">Return to Events</a>
+	<a href="browseevents.php?userID=<?php echo $user; ?>&type=<?php echo $type?>" class="button">Return to Events</a>
 
 	<form method ='POST' action='askactioncomment.php?userID=<?php echo $user?>&type=<?php echo $type?>&event=<?php echo $event?>'>
 		<h3>Leave a Comment:</h3>
