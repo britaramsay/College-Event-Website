@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.6.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Apr 04, 2017 at 06:20 PM
--- Server version: 5.7.17-log
--- PHP Version: 7.1.3
+-- Host: 127.0.0.1
+-- Generation Time: Mar 30, 2017 at 08:43 PM
+-- Server version: 5.7.14
+-- PHP Version: 5.6.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `college_event_plan`
+-- Database: `mydb`
 --
 
 -- --------------------------------------------------------
@@ -100,17 +98,6 @@ INSERT INTO `events` (`eventID`, `name`, `date`, `time`, `category`, `email`, `p
 -- --------------------------------------------------------
 
 --
--- Table structure for table `held_at`
---
-
-CREATE TABLE `held_at` (
-  `eventID` int(50) NOT NULL,
-  `locationID` int(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `inrso`
 --
 
@@ -132,19 +119,6 @@ INSERT INTO `inrso` (`rsoID`, `studentID`, `memID`) VALUES
 (1, 'cthulhu@test.ucf.edu', 45),
 (2, 'cthulhu@test.ucf.edu', 46),
 (2, 'bob@test.ucf.edu', 40);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `locations`
---
-
-CREATE TABLE `locations` (
-  `locationID` int(50) NOT NULL,
-  `name` text NOT NULL,
-  `longitude` decimal(10,0) NOT NULL,
-  `latitude` decimal(10,0) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -176,17 +150,16 @@ INSERT INTO `rsoevents` (`eventID`, `rsoID`) VALUES
 CREATE TABLE `rsos` (
   `name` varchar(40) NOT NULL,
   `rsoID` int(11) NOT NULL,
-  `adminID` varchar(40) NOT NULL,
-  `description` text NOT NULL
+  `adminID` varchar(40) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `rsos`
 --
 
-INSERT INTO `rsos` (`name`, `rsoID`, `adminID`, `description`) VALUES
-('Physics Group', 1, 'glob@test.ucf.edu', ''),
-('Chemistry Group', 2, 'alienmode@test.ucf.edu', '');
+INSERT INTO `rsos` (`name`, `rsoID`, `adminID`) VALUES
+('Physics Group', 1, 'glob@test.ucf.edu'),
+('Chemistry Group', 2, 'alienmode@test.ucf.edu');
 
 -- --------------------------------------------------------
 
@@ -210,8 +183,7 @@ INSERT INTO `students` (`username`, `email`, `university`) VALUES
 ('SamSand', 'sam@test.ucf.edu', 'University of Central Florida'),
 ('SaltKid', 'bob@test.ucf.edu', 'University of Central Florida'),
 ('SallySuper', 'super@test.ucf.edu', 'University of Central Florida'),
-('CindySwirlyFan', 'fanfan@test.ucf.edu', 'University of Central Florida'),
-('mcheng', 'mcheng@ucf.edu', 'UCF');
+('CindySwirlyFan', 'fanfan@test.ucf.edu', 'University of Central Florida');
 
 -- --------------------------------------------------------
 
@@ -280,9 +252,7 @@ INSERT INTO `users` (`firstName`, `lastName`, `username`, `password`) VALUES
 ('Cindy', 'Swirl', 'SwirlyFan', 'ASDFASDF'),
 ('Sam', 'Hyde', 'Popsickle', 'ASDFASDF'),
 ('Glob', 'Globson', 'Globby', 'ASDFASDF'),
-('Super', 'Admin', 'superadmin', 'ASDFASDF'),
-('Adrian', 'Ageste', 'aageste', '123'),
-('Marinette', 'Cheng', 'mcheng', '123');
+('Super', 'Admin', 'superadmin', 'ASDFASDF');
 
 --
 -- Indexes for dumped tables
@@ -307,23 +277,11 @@ ALTER TABLE `events`
   ADD PRIMARY KEY (`eventID`);
 
 --
--- Indexes for table `held_at`
---
-ALTER TABLE `held_at`
-  ADD PRIMARY KEY (`eventID`);
-
---
 -- Indexes for table `inrso`
 --
 ALTER TABLE `inrso`
   ADD UNIQUE KEY `memID_2` (`memID`),
   ADD KEY `memID` (`memID`);
-
---
--- Indexes for table `locations`
---
-ALTER TABLE `locations`
-  ADD PRIMARY KEY (`locationID`);
 
 --
 -- Indexes for table `rsoevents`
@@ -374,23 +332,17 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `eventID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `eventID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT for table `inrso`
 --
 ALTER TABLE `inrso`
-  MODIFY `memID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
---
--- AUTO_INCREMENT for table `locations`
---
-ALTER TABLE `locations`
-  MODIFY `locationID` int(50) NOT NULL AUTO_INCREMENT;
+  MODIFY `memID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 --
 -- AUTO_INCREMENT for table `rsos`
 --
 ALTER TABLE `rsos`
-  MODIFY `rsoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;COMMIT;
-
+  MODIFY `rsoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

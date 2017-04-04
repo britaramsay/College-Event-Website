@@ -14,7 +14,7 @@
 	?>
 
 	<!--Verify? inputed values on askaction.php-->
-	<form method = 'POST' action = 'askactionstudent.php?userID =< ?php echo $user ?> &type=<?php echo $type?>'>
+	<form method = 'POST' action = 'askactionstudent.php?userID=<?php echo $user ?> &type=<?php echo $type?>'>
 		<p>Name of RSO: 
 		<input type ='text' name='name' /></br>
 		<p>Affiliated University: 

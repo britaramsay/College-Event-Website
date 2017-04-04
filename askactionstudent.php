@@ -11,7 +11,10 @@
 	} 
 	
 	mysqli_select_db($conn, 'root');
-
+	
+	$user = $_GET['userID'];
+	$type = $_GET['type'];
+	
 	if(empty($_POST["student1"]) || empty($_POST["student2"]) || 
 	   empty($_POST["student3"]) || empty($_POST["student4"]) ||
 	   empty($_POST["student5"])){
@@ -26,8 +29,11 @@
 	$sql1 = "INSERT INTO admins(email, university, username)
 	VALUES ('$_POST[adminID]', '$_POST[university]', '$_POST[username]')";
 	
+	// add students to inrso table
+	
+	
 	if (!mysqli_query($conn, $sql)){
-		die('Error: ' . mysql_error());}
+		die('Error: not in rso' . mysql_error());}
 
 	if (!mysqli_query($conn, $sql1)){
 		die('Error: ' . mysql_error());}
@@ -43,6 +49,6 @@
 	</head>
 	<body>
 		<br><br>
-		<a href="studentmain.php?userID=<?php echo $user?>&type=<?php echo $type?>?" class = "button">Return to Student Homepage</a>
+		<a href="studentmain.php?userID=<?php echo $user; ?>&type=<?php echo $type?>" class = "button">Return to Student Homepage</a>
 	</body>
 </html>
