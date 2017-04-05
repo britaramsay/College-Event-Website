@@ -82,6 +82,8 @@
 		<h3><ins>Create an RSO</ins></h3>
 		<p>Create a new RSO with at least five other students!</p>
 		<br>
+				<!--<a href ='studentcreate.php?userID=<?php echo $user; ?>&type=<?php echo $type?>'> <button class = "button">Create an RSO</button></a>
+-->
 		<a href ='studentcreate.php?userID=<?php echo $user; ?>&type=<?php echo $type?>' class = "button">Create an RSO</a>
 	</article>
 	<br>

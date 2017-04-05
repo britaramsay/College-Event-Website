@@ -1,11 +1,57 @@
 <html>
 	<head>
 		<title>Browse Events</title>
-		<link rel="stylesheet" type="text/css" href="style.css" />
+		<style type = "text/css">
+		header, section, footer, sidebar, nav, article, figure, 
+		figcaption { display: block;}
+
+		body {
+			background-color: #D8D8D8;
+			color: white;
+			padding: 20px;
+			font-family: Arial, Verdana, sans-serif;}
+		
+		page{
+			background-color: #5A7194;}
+
+		header {
+			height: 160px; 
+			background-color: #6390BF;
+			padding: inherit;}
+
+		sidebar {
+			background-color: white; 
+			width: 180px;   
+			float: left; 
+			padding: 0px 15px 15px 10px;}
+
+		article{
+			background-color: white; 
+			width: 800px;
+			margin: 0px 0px 0px 250px;  
+			padding: inherit;}
+
+		p {
+			padding: 5px;
+			margin: 0px;
+			color: black;}
+
+		h1 {
+			text-align: center;
+			font-size: 40px;
+			color: white;	
+			padding-top: 40px;}
+
+		h3 {
+			color: black; }
+		
+		
+		</style>
 	</head>
 	<body>
-		<h2>College Event Website</h2>
-				
+	<header>
+		<h1>College Event Website</h1>
+	</header>	
 		<?php
 			$servername = "localhost";
 			$username = "root";
@@ -19,11 +65,25 @@
 			}
 			
 			session_start();
-			echo '<h3>'."Public Events".'</h3>';
+			
 
 			$result = mysqli_query($con,"SELECT * FROM Events WHERE category = 'Public'");
 			$user = $_GET['userID'];
 			$type = $_GET['type'];
+			
+			?><br><br><sidebar><?php
+			if($type == "Admin"){
+				?><br><a href = 'adminmain.php?userID=<?php echo $user; ?>'> <button class = 'button'>Return to Admin Homepage</button></a><?php
+			}
+			if ($type == "Student"){
+				?>
+				<br><a href = 'studentmain.php?userID=<?php echo $user; ?>&type=<?php echo $type?>'> <button class = "button">Return to Student Homepage</button></a>
+				<?php
+			}
+			?></sidebar><?php
+			
+			?><br><article><?php
+			echo '<h3>'."Public Events".'</h3>';
 			
 			if (mysqli_num_rows($result) > 0) {
 			// output data of each row
@@ -40,7 +100,7 @@
 			} else {
 				echo "No Public Events";
 			}
-			
+			?></article><br><article><?php
 			
 			
 			echo '<h3>'."Your RSO Events".'</h3>';
@@ -143,6 +203,8 @@
 					echo '<p>'."Not in any RSOs";	
 				}
 			}
+			?></article><br><article><?php
+
 			// Get Private events
 			echo '<h3>'."Private Events at ".$school.'</h3>';
 			$resultpriv = mysqli_query($con, "SELECT eventID FROM privateevents WHERE university = '$school'");
@@ -175,16 +237,9 @@
 			else{
 				echo '<p>'."No private events by this University";
 			}
+			?></article><?php
 			
 			
-			if($type == "Admin"){
-				?><br><a href = 'adminmain.php?userID=<?php echo $user; ?>' class = 'button'>Return to Admin Homepage</a><?php
-			}
-			if ($type == "Student"){
-				?>
-				<a href = "studentmain.php?userID=<?php echo $user; ?>&type=<?php echo $type?>" class = "button">Return to Student Homepage</a>
-				<?php
-			}
 
 			mysqli_close($con);?>
 		
