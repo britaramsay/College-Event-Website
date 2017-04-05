@@ -83,8 +83,7 @@
 ?>
 	
 </p>
-	Implement:<br>
-	View events by this RSO, send $rso, relate events to rso
+	
 	
  </body>
 </html>

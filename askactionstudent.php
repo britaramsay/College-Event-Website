@@ -13,7 +13,6 @@
 	mysqli_select_db($conn, 'root');
 	
 	$user = $_GET['userID'];
-	$type = $_GET['type'];
 	
 	if(empty($_POST["student1"]) || empty($_POST["student2"]) || 
 	   empty($_POST["student3"]) || empty($_POST["student4"]) ||
@@ -49,6 +48,6 @@
 	</head>
 	<body>
 		<br><br>
-		<a href="studentmain.php?userID=<?php echo $user; ?>&type=<?php echo $type?>" class = "button">Return to Student Homepage</a>
+		<a href="studentmain.php?userID=<?php echo $user; ?>" class = "button">Return to Student Homepage</a>
 	</body>
 </html>

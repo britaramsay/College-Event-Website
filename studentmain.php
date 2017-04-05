@@ -89,7 +89,7 @@
 		<h3><ins>Find RSOs</ins></h3>
 		<p> Find and join RSOs for your university!</p>
 		<br>
-		<a href = 'browsersos.php?userID=<?php echo $user; ?>&type?>' class = "button">Search RSOs</a>
+		<a href = 'browsersos.php?userID=<?php echo $user; ?>&type=<?php echo $type?>' class = "button">Search RSOs</a>
 	</article>
 	<br>
 	<article>

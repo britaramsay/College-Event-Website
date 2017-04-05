@@ -1,7 +1,6 @@
 <html>
  	<head>
   		<title> Student - Create RSO </title>
-  		<link rel="stlesheet" tpe = "text/css" href="style.css"/>
 		<style type = "text/css">
 		header, section, footer, sidebar, nav, article, figure,	
 		figcaption {display: block;}
@@ -45,7 +44,7 @@
 		?>
 		
 		<article>
-		<form method = 'POST' action ='askactionregister.php'>
+		<form method = 'POST' action ='askactionstudent.php?userID=<?php echo $user ?>'>
 		<fieldset>
 			<legend><b>RSO Information</b></legend>
 			<p><label>Name of RSO:
