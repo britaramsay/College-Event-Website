@@ -1,53 +1,7 @@
 <html>
 	<head>
 		<title> Student Homepage</title>
-		<style type = "text/css">
-		header, section, footer, sidebar, nav, article, figure, 
-		figcaption { display: block;}
-
-		body {
-			background-color: #D8D8D8;
-			color: white;
-			padding: 20px;
-			font-family: Arial, Verdana, sans-serif;}
-		
-		page{
-			background-color: #5A7194;}
-
-		header {
-			height: 160px; 
-			background-color: #6390BF;
-			padding: inherit;}
-
-		sidebar {
-			background-color: white; 
-			width: 180px;   
-			float: left; 
-			padding: 0px 15px 15px 10px;}
-
-		article{
-			background-color: white; 
-			width: 800px;
-			margin: 0px 0px 0px 250px;  
-			padding: inherit;}
-
-		p {
-			padding: 5px;
-			margin: 0px;
-			color: black;}
-
-		h1 {
-			text-align: center;
-			font-size: 40px;
-			color: white;	
-			padding-top: 40px;}
-
-		h3 {
-			color: black; }
-		
-		
-		</style>
-
+		<link rel="stylesheet" type="text/css" href="style1.css" />
 	</head>
 
 <body>
@@ -67,14 +21,12 @@
 		?>
 
 		<?php			
-			echo '<p>'."You are logged in as: ".'<i>'.$user.'</i>';
+			echo '<p1>'."You are logged in as: ".'<i>'.$user.'</i>'.'<p1>';
 		?>
 
 		<br><br>
 
-		<a href = "" class = "button">View Your RSOs</a>
-		<br><br>
-		<a href = "logout.php" class = "button2">Logout</a>
+		<a href = 'logout.php'> <button class = "button">Logout</button></a>
 		</section>
 	</sidebar>
 	
@@ -82,23 +34,23 @@
 		<h3><ins>Create an RSO</ins></h3>
 		<p>Create a new RSO with at least five other students!</p>
 		<br>
-				<!--<a href ='studentcreate.php?userID=<?php echo $user; ?>&type=<?php echo $type?>'> <button class = "button">Create an RSO</button></a>
--->
-		<a href ='studentcreate.php?userID=<?php echo $user; ?>&type=<?php echo $type?>' class = "button">Create an RSO</a>
+		<a href ='studentcreate.php?userID=<?php echo $user; ?>&type=<?php echo $type?>'> <button class = "button">Create an RSO</button></a>
+
 	</article>
 	<br>
 	<article>
 		<h3><ins>Find RSOs</ins></h3>
 		<p> Find and join RSOs for your university!</p>
 		<br>
-		<a href = 'browsersos.php?userID=<?php echo $user; ?>&type=<?php echo $type?>' class = "button">Search RSOs</a>
+
+		<a href = 'browsersos.php?userID=<?php echo $user; ?>&type=<?php echo $type?>'> <button class = "button">Search RSOs</button></a>
 	</article>
 	<br>
 	<article>
 		<h3><ins>Find Events<ins></h3>
 		<p> Search for public, private, and RSO events!</p>
 		<br>
-		<a href = 'browseevents.php?userID=<?php echo $user; ?>&type=<?php echo $type?>' class = "button1">Search Events</a>
+		<a href = 'browseevents.php?userID=<?php echo $user; ?>&type=<?php echo $type?>' ><button class = "button">Search Events</button></a>
 	</article>
 	
 </body>

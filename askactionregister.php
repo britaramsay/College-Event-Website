@@ -17,7 +17,7 @@
 
 	$sql="INSERT INTO users(firstName, lastName, username, password)
 	VALUES ('$_POST[firstName]', '$_POST[lastName]', '$_POST[username]', '$_POST[password]')";
-
+	
 	$sql1="INSERT INTO students(username, email, university)
 	VALUES ('$_POST[username]', '$_POST[email]', '$_POST[school]')";
  
@@ -38,6 +38,6 @@
 		<link rel="stylesheet" type="text/css" href="style.css" />
 	</head>
 	<body><br><br>
-		<a href="studentmain.php" class = "button">Return to Student Homepage</a>
+		<a href="login.php" class = "button">Return to Login Page</a>
 	</body>
 </html>

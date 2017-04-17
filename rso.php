@@ -1,52 +1,7 @@
 <html>
  <head>
   <title>RSO - Main</title>
-		<style type = "text/css">
-		header, section, footer, sidebar, nav, article, figure, 
-		figcaption { display: block;}
-
-		body {
-			background-color: #D8D8D8;
-			color: white;
-			padding: 20px;
-			font-family: Arial, Verdana, sans-serif;}
-		
-		page{
-			background-color: #5A7194;}
-
-		header {
-			height: 160px; 
-			background-color: #6390BF;
-			padding: inherit;}
-
-		sidebar {
-			background-color: white; 
-			width: 180px;   
-			float: left; 
-			padding: 0px 15px 15px 10px;}
-
-		article{
-			background-color: white; 
-			width: 800px;
-			margin: 0px 0px 0px 250px;  
-			padding: inherit;}
-
-		p {
-			padding: 5px;
-			margin: 0px;
-			color: black;}
-
-		h1 {
-			text-align: center;
-			font-size: 40px;
-			color: white;	
-			padding-top: 40px;}
-
-		h3 {
-			color: black; }
-		
-		
-		</style>  
+	<link rel="stylesheet" type="text/css" href="style1.css" />
  </head>
  <body>
 	<header>
@@ -82,8 +37,7 @@
 	<sidebar>
 	
 	<br>
-	<a href='browsersosearch.php?rso=<?php echo $rso?>&userID=<?php echo $user?>&type=<?php echo $type?>'> <button class = "button">View Events by this RSO</button></a>
-	<br><br>
+	
 	<a href='browsersos.php?userID=<?php echo $user?>&type=<?php echo $type?>'> <button class="button">Return to RSO List</button></a>
 
 	</sidebar>

@@ -1,26 +1,30 @@
 <html>
  <head>
 	<title>Admin - Main</title>
-	<link rel="stylesheet" type="text/css" href="style.css" />	  
+		<link rel="stylesheet" type="text/css" href="style1.css" />	
  </head>
  <body>
 	
-	<p><h2>College Event Website</h2></p>
-
-	<p><h3>Welcome Admin!</h3></p>
+<p><header><h1>College Event Website</h1></p></header>
 	
 	<?php
 	$user = $_GET['userID'];
 	?>
-
-	<a href = "adminadd.php?userID=<?php echo $user ?>&type=Admin" class = "button2" type = "submit">Add an Event<a><br>
-	
-	<a href = "browseevents.php?userID=<?php echo $user?>&type=Admin" class = "button">Browse Events</a><br><br>
-	
+<br><sidebar>
+	<section class = "Admin Main">
+	<h3>Welcome Admin!</h3>
 	<?php			
 		echo '<p>'."Logged in as ".$user;
 	?>
+	<br><br><a href = 'logout.php'> <button class = "button">Logout</button></a>
+	</section>
+</sidebar>
+
+<article><br>
+	<p>Add a New Event: <a href = 'adminadd.php?userID=<?php echo $user ?>&type=Admin'> <button class = "button" type = "submit">Add an Event</button><a><br>
+<br></article><br><article><br>
+	<p>Browse Events: <a href = 'browseevents.php?userID=<?php echo $user?>&type=Admin'> <button class = "button">Browse Events</button></a><br><br>
+</article>
 	<!--Logout Button-->
-	<a href = "logout.php" class = "button2">Logout</a>
  </body>
 </html>

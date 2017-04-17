@@ -2,32 +2,26 @@
  <head>
   <title>Student - Register</title>
   <link rel="stylesheet" type="text/css" href="style.css" />
-	
+  
   <style type = "text/css">
 	body{
 		background-color: #D8D8D8;
 		font-family: Arial, Verdana, sans-serif;}
-
 	header{
 		height: 160px; 
 		background-color: #6390BF; 
 		padding: inherit;}
-
 	article{
 	   background-color: white;
 	   padding: 20px;}
-
-
 	h1{
 		text-align: center; 
 		font-size: 40px; 
 		color: white; 
 		padding-top: 40px;}
-
 	fieldset{
 		text-align: left;
 		font-size: 20px;}
-
   </style>
 
  </head>
@@ -73,3 +67,4 @@
 	
  </body>
 </html>
+ 

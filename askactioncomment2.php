@@ -1,11 +1,5 @@
 
-<html>
-	<head>
-		<title>Logging In</title>
-		<link rel="stylesheet" type="text/css" href="style1.css" />
-	</head>
-	<body>
-	<article>
+
 <?php
 	$servername = "localhost";
 	$username = "root";
@@ -55,18 +49,18 @@
 				}
 				else{
 					echo '<p>'."Logged in as ".$row["firstName"]." ".$row["lastName"].'<br><br>';
-					?><a href = 'superadminmain.php?userID=<?php echo $uid ?>'> <button class = "button">Go to SuperAdmin Homepage</button></a><?php
+					?><a href = 'superadminmain.php?userID=<?php echo $uid; ?>' class = "button">Go to SuperAdmin Homepage</a><?php
 				}
 			}
 			else{
 				echo '<p>'."Logged in as ".$row["firstName"]." ".$row["lastName"].'<br><br>';
-				?><a href = 'adminmain.php?userID=<?php echo $uid ?>'> <button class = "button">Go to Admin Homepage</button></a><?php
+				?><a href = 'adminmain.php?userID=<?php echo $uid; ?>' class = "button">Go to Admin Homepage</a><?php
 			}
 				
 		}
 		else{
 			echo '<p>'."Logged in as ".$row["firstName"]." ".$row["lastName"].'<br><br>';
-			?><a href = 'studentmain.php?userID=<?php echo $uid ?>'> <button class = "button">Go to Student Homepage</button></a><?php	
+			?><a href = 'studentmain.php?userID=<?php echo $uid; ?>' class = "button">Go to Student Homepage</a><?php	
 		}
 	
 	}	
@@ -75,6 +69,11 @@
 	mysqli_close($conn)
 
 ?>
-	</article>
+<html>
+	<head>
+		<title>Logging In</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+	</head>
+	<body>
 	</body>
 </html>

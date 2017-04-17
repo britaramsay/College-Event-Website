@@ -1,52 +1,8 @@
 <html>
 	<head>
 		<title>Browse RSOs</title>
-		<style type = "text/css">
-		header, section, footer, sidebar, nav, article, figure, 
-		figcaption { display: block;}
+				<link rel="stylesheet" type="text/css" href="style1.css" />
 
-		body {
-			background-color: #D8D8D8;
-			color: white;
-			padding: 20px;
-			font-family: Arial, Verdana, sans-serif;}
-		
-		page{
-			background-color: #5A7194;}
-
-		header {
-			height: 160px; 
-			background-color: #6390BF;
-			padding: inherit;}
-
-		sidebar {
-			background-color: white; 
-			width: 180px;   
-			float: left; 
-			padding: 0px 15px 15px 10px;}
-
-		article{
-			background-color: white; 
-			width: 800px;
-			margin: 0px 0px 0px 250px;  
-			padding: inherit;}
-
-		p {
-			padding: 5px;
-			margin: 0px;
-			color: black;}
-
-		h1 {
-			text-align: center;
-			font-size: 40px;
-			color: white;	
-			padding-top: 40px;}
-
-		h3 {
-			color: black; }
-		
-		
-		</style>
 	</head>
 	<body>
 		<header>
@@ -72,9 +28,10 @@
 			?>
 			<sidebar>
 		<!--Link back to student main page, acrry userID-->
-		<br><a href='studentmain.php?userID=<?php echo $user; ?>' class = "button">Return to Student Homepage<br></a>
+		<br><a href='studentmain.php?userID=<?php echo $user; ?>'> <button class = "button">Return to Student Homepage</button></a><br>
 		</sidebar>
 			<?php
+			
 			// Get the email of the current user
 			$result1 = mysqli_query($conn, "SELECT email FROM students WHERE username = '$user'");
 			$row1 = mysqli_fetch_assoc($result1);

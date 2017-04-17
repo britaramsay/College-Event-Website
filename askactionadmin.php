@@ -2,8 +2,11 @@
 <html>
 	<head>
 		<title>Added University</title>
-		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link rel="stylesheet" type="text/css" href="style1.css" />
 	</head>
+	<header>
+		<p><h1>College Event Website</h1>
+	</header>
 	<body>
 		<?php
 		$servername = "localhost";
@@ -24,12 +27,17 @@
 		$name = $_POST['name'];
 		$sql="INSERT INTO events (name, date, time, category, email, phone, discription)
 		VALUES ('$_POST[name]', '$_POST[date]', '$_POST[time]', '$_POST[category]', '$_POST[email]', '$_POST[phone]', '$_POST[discription]')";
-		
-		
+		if($_POST['category']=="Public"){
+			?><br><sidebar>
+				<br><a href='adminmain.php?userID=<?php echo $user?>&type=<?php echo $type?>?'> <button class = "button">Return to Admin Homepage</button></a>
+			</sidebar><?php
+		}
+		?><br><article><?php
 		if (!mysqli_query($conn, $sql)){
 			die('Error: ' . mysql_error());}
 		echo '<p>'."Event Added";
-		
+		?></article><br><article>
+		<?php
 		$sql = "SELECT eventID FROM events WHERE name = '$name'";
 		$result = mysqli_query($conn, $sql);
 		
@@ -56,13 +64,10 @@
 			</form><?php
 		
 		}
-		if($_POST['category']=="Public"){
-			?>
-				<a href="adminmain.php?userID=<?php echo $user?>&type=<?php echo $type?>?" class = "button">Return to Admin Homepage</a>
-			<?php
-		}
+		
+		
 		mysqli_close($conn)
 
-	?>		
+	?>	</article>	
 	</body>
 </html>

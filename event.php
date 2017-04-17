@@ -1,53 +1,7 @@
 <html>
  <head>
   <title>Event - Main</title>
-  <style type = "text/css">
-		header, section, footer, sidebar, nav, article, figure, 
-		figcaption { display: block;}
-
-		body {
-			background-color: #D8D8D8;
-			color: white;
-			padding: 20px;
-			font-family: Arial, Verdana, sans-serif;}
-		
-		page{
-			background-color: #5A7194;}
-
-		header {
-			height: 160px; 
-			background-color: #6390BF;
-			padding: inherit;}
-
-		sidebar {
-			background-color: white; 
-			width: 180px;   
-			float: left; 
-			padding: 0px 15px 15px 10px;}
-
-		article{
-			background-color: white; 
-			width: 800px;
-			margin: 0px 0px 0px 250px;  
-			padding: inherit;}
-
-		p {
-			padding: 5px;
-			margin: 0px;
-			color: black;}
-
-		h1 {
-			text-align: center;
-			font-size: 40px;
-			color: white;	
-			padding-top: 40px;}
-
-		h3 {
-			color: black; }
-		
-		
-</style>
-		
+	<link rel="stylesheet" type="text/css" href="style1.css" />
 </head>
 <body>
 <header>	
@@ -70,7 +24,7 @@
 	
 	mysqli_select_db($conn, 'root');
 	
-	$event = $_GET['id'];
+	$event = $_GET['event'];
 	$type = $_GET['type'];
 
 ?><br>
@@ -132,16 +86,22 @@
 <br>
 <article>	
 	<?php 
-	$result = mysqli_query($conn, "SELECT comment, username FROM comments WHERE eventID = '$event'");
+	$result = mysqli_query($conn, "SELECT * FROM comments WHERE eventID = '$event'");
 			// View Results
-			if (mysqli_num_rows($result) > 0) {
-				echo '<h3>'."Comments".'</h3>';
-				while($row = mysqli_fetch_assoc($result)) {
-					echo '<p>'."''".$row["comment"]."''"." by ".$row["username"];					
-				}
-			} 
-			else 
-				echo '<h3>'."No comments".'</h3>';
+	if (mysqli_num_rows($result) > 0) {
+		echo '<h3>'."Comments".'</h3>';
+		while($row = mysqli_fetch_assoc($result)) {
+			echo '<p>'."''".$row["comment"]."''"." by ".$row["username"];
+			if($row['username'] == $user){
+				$com = $row['commentID'];
+				?>
+				<a href ='deletecomment.php?userID=<?php echo $user; ?>&eventID=<?php echo $event?>&type=<?php echo $type?> &comment=<?php echo $com?>'> <button class = "button">Delete</button></a>
+				<?php
+			}
+		}
+	} 
+	else 
+		echo '<h3>'."No comments".'</h3>';
 	
 	mysqli_close($conn)
 	?>

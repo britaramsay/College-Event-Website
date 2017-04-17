@@ -1,52 +1,7 @@
 <html>
 	<head>
 		<title>Browse Events</title>
-		<style type = "text/css">
-		header, section, footer, sidebar, nav, article, figure, 
-		figcaption { display: block;}
-
-		body {
-			background-color: #D8D8D8;
-			color: white;
-			padding: 20px;
-			font-family: Arial, Verdana, sans-serif;}
-		
-		page{
-			background-color: #5A7194;}
-
-		header {
-			height: 160px; 
-			background-color: #6390BF;
-			padding: inherit;}
-
-		sidebar {
-			background-color: white; 
-			width: 180px;   
-			float: left; 
-			padding: 0px 15px 15px 10px;}
-
-		article{
-			background-color: white; 
-			width: 800px;
-			margin: 0px 0px 0px 250px;  
-			padding: inherit;}
-
-		p {
-			padding: 5px;
-			margin: 0px;
-			color: black;}
-
-		h1 {
-			text-align: center;
-			font-size: 40px;
-			color: white;	
-			padding-top: 40px;}
-
-		h3 {
-			color: black; }
-		
-		
-		</style>
+			<link rel="stylesheet" type="text/css" href="style1.css" />
 	</head>
 	<body>
 	<header>
@@ -93,7 +48,7 @@
 				echo '<p>'.$row["name"].", ".$row["date"];
 				
 				?>
-				<a href='event.php?id=<?php echo $eventID; ?>&userID=<?php echo $user; ?>&type=<?php echo $type?>'>View<br></a>
+				<a href='event.php?event=<?php echo $eventID; ?>&userID=<?php echo $user; ?>&type=<?php echo $type?>'>View<br></a>
 				</br>
 				<?php
 			}
@@ -135,7 +90,7 @@
 									echo '<p>'.$rowf["name"].", ".$rowf["date"];
 										
 									?>
-									<a href='event.php?id=<?php echo $eventID; ?>&userID=<?php echo $user; ?>&type=<?php echo $type?>'>View<br></a>
+									<a href='event.php?event=<?php echo $eventID; ?>&userID=<?php echo $user; ?>&type=<?php echo $type?>'>View<br></a>
 									</br>
 									<?php
 								}
@@ -185,7 +140,7 @@
 									echo '<p>'.$rowf["name"].", ".$rowf["date"];
 										
 									?>
-									<a href='event.php?id=<?php echo $eventID; ?>&userID=<?php echo $user; ?>&type=<?php echo $type?>'>View<br></a>
+									<a href='event.php?event=<?php echo $eventID; ?>&userID=<?php echo $user; ?>&type=<?php echo $type?>'>View<br></a>
 									</br>
 									<?php
 								}
@@ -206,6 +161,11 @@
 			?></article><br><article><?php
 
 			// Get Private events
+			$resultinfo = mysqli_query($con,"SELECT university FROM students WHERE username = '$user'");
+			$rowsinfo = mysqli_fetch_assoc($resultinfo);
+			// Get email and school
+			$school = $rowsinfo["university"];
+			
 			echo '<h3>'."Private Events at ".$school.'</h3>';
 			$resultpriv = mysqli_query($con, "SELECT eventID FROM privateevents WHERE university = '$school'");
 			if (mysqli_num_rows($resultpriv) > 0) {
@@ -224,7 +184,7 @@
 							echo '<p>'.$rowf["name"].", ".$rowf["date"];
 										
 							?>
-								<a href='event.php?id=<?php echo $eventID; ?>&userID=<?php echo $user; ?>&type=<?php echo $type?>'>View<br></a>
+								<a href='event.php?event=<?php echo $eventID; ?>&userID=<?php echo $user; ?>&type=<?php echo $type?>'>View<br></a>
 								</br>
 							<?php
 						}

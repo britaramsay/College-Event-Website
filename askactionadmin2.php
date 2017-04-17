@@ -2,8 +2,11 @@
 <html>
 	<head>
 		<title>Event Added - Get Details</title>
-		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link rel="stylesheet" type="text/css" href="style1.css" />
 	</head>
+	<header>
+		<p><h1>College Event Website</h1>
+	</header>
 	<body>
 		<?php
 		$servername = "localhost";
@@ -24,7 +27,7 @@
 		$eventID = $_GET['eventID'];
 		$eventtype = $_GET['eventtype'];
 		$name = $_POST['name'];
-		
+		?><br><article><?php
 		
 		if($eventtype == "RSO"){
 			$sql = "SELECT rsoID FROM rsos WHERE name = '$name'";
@@ -44,7 +47,7 @@
 			}
 			echo '<p>'."Event Updated";
 			?>
-				<br><a href="adminmain.php?userID=<?php echo $user?>&type=<?php echo $type?>?" class = "button">Return to Admin Homepage</a>
+				<br><br><a href="adminmain.php?userID=<?php echo $user?>&type=<?php echo $type?>?" class = "button">Return to Admin Homepage</a>
 			<?php
 		}
 		if($eventtype == "Private"){
@@ -66,7 +69,7 @@
 			}
 			echo '<p>'."Event Updated";
 			?>
-				<br><a href="adminmain.php?userID=<?php echo $user?>&type=<?php echo $type?>?" class = "button">Return to Admin Homepage</a>
+				<br><br><a href="adminmain.php?userID=<?php echo $user?>&type=<?php echo $type?>?" class = "button">Return to Admin Homepage</a>
 			<?php
 		}
 		
@@ -74,6 +77,6 @@
 	
 		mysqli_close($conn)
 
-	?>		
+	?>		</article>
 	</body>
 </html>
