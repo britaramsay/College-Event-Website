@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 17, 2017 at 09:49 PM
+-- Generation Time: Apr 17, 2017 at 10:00 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -122,8 +122,11 @@ CREATE TABLE `held_at` (
 INSERT INTO `held_at` (`eventID`, `locationID`) VALUES
 (2, 1),
 (6, 1),
+(7, 2),
 (8, 1),
-(18, 1);
+(9, 2),
+(18, 1),
+(19, 2);
 
 -- --------------------------------------------------------
 
@@ -187,7 +190,8 @@ CREATE TABLE `locations` (
 --
 
 INSERT INTO `locations` (`locationID`, `name`, `longitude`, `latitude`, `image`) VALUES
-(1, 'CFE Arena', -81.197413, 28.607498, 'location-cfearena');
+(1, 'CFE Arena', -81.197413, 28.607498, 'location-cfearena'),
+(2, 'Reflecting Pond', -81.20258, 28.596524, 'location-reflectingpond');
 
 -- --------------------------------------------------------
 
