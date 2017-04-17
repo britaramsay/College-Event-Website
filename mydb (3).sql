@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 17, 2017 at 10:00 PM
+-- Generation Time: Apr 17, 2017 at 10:58 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -182,16 +182,16 @@ CREATE TABLE `locations` (
   `name` text NOT NULL,
   `longitude` double NOT NULL,
   `latitude` double NOT NULL,
-  `image` varchar(200) NOT NULL
+  `src` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `locations`
 --
 
-INSERT INTO `locations` (`locationID`, `name`, `longitude`, `latitude`, `image`) VALUES
-(1, 'CFE Arena', -81.197413, 28.607498, 'location-cfearena'),
-(2, 'Reflecting Pond', -81.20258, 28.596524, 'location-reflectingpond');
+INSERT INTO `locations` (`locationID`, `name`, `longitude`, `latitude`, `src`) VALUES
+(1, 'CFE Arena', -81.197413, 28.607498, 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.7516953981217!2d-81.19955558499159!3d28.607224982427734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e7685ab730f8df%3A0x2c709c3389630da0!2sCFE+Arena!5e0!3m2!1sen!2sus!4v1492469510569'),
+(2, 'Reflecting Pond', -81.20258, 28.596524, 'https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3503.006201052701!2d-81.20417123499176!3d28.59959078243076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sreflecting+pond!5e0!3m2!1sen!2sus!4v1492468500413');
 
 -- --------------------------------------------------------
 
