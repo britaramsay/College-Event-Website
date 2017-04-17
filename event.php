@@ -31,6 +31,7 @@
 <sidebar>
 	<br><a href='browseevents.php?userID=<?php echo $user; ?>&type=<?php echo $type?>'> <button class="button">Return to Events</button></a>
 </sidebar>
+
 <br>
 <article>
 <?php	
@@ -63,12 +64,17 @@
 		}
 		else{
 		$location = $row['locationID'];
-		$sql = "SELECT name, image FROM locations WHERE locationID = '$location'";
+		$sql = "SELECT name, src FROM locations WHERE locationID = '$location'";
 		$result = mysqli_query($conn, $sql);
 		$row = mysqli_fetch_assoc($result);
 		echo '<p>'."Held at ".$row['name'].'<br>';
-		$image = $row['image'];
-		?><br><img src="<?php echo $image; ?>" style="width:304px;height:228px;"><br><br>
+		$src = $row['src'];
+		?><br>
+		
+		<iframe src="<?php echo $src;?>" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+	
+		
+		
 		<?php
 		}
 		

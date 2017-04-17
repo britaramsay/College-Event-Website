@@ -1,0 +1,9 @@
+Database name: mybd
+Servername: localhost
+Username: root
+Password: ""
+
+This zipped folder contains .php files and a .css stylesheet
+which should all be kept in the same directory. 
+
+A .sql file is also supplied for the current instance of the database.

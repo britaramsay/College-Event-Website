@@ -1,8 +1,7 @@
 <html>
 	<head>
 		<title>Browse RSOs</title>
-				<link rel="stylesheet" type="text/css" href="style1.css" />
-
+			<link rel="stylesheet" type="text/css" href="style1.css" />
 	</head>
 	<body>
 		<header>

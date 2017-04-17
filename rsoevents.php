@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<title>Browse Events</title>
-		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link rel="stylesheet" type="text/css" href="style1.css" />
 	</head>
 	<body>
 		<h2>College Event Website</h2>
