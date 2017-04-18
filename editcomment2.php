@@ -32,7 +32,7 @@
 		}
 		
 		?>
-		<br><a href='event.php?userID=<?php echo $user; ?>&event=<?php echo $event?>&type=<?php echo $type?>>'> <button class = "button">Return to Event Page</button></a>
+		<br><a href='event.php?userID=<?php echo $user?>&event=<?php echo $event?>&type=<?php echo $type?>'> <button class = "button">Return to Event Page</button></a>
 		<?php 
 		mysqli_close($conn)
 		?>

@@ -16,7 +16,7 @@
 			 die("Connection failed: " . $conn->connect_error);
 		} 
 		
-		//mysqli_select_db($conn, 'root');
+		mysqli_select_db($conn, 'root');
 			
 		session_start();
 		$user = $_GET['userID'];
@@ -35,7 +35,7 @@
 		</article>
 		<?php
 		?>
-		<a href='event.php?userID=<?php echo $user; ?>&event=<?php echo $event?>&type=<?php echo $type?>>'> <button class = "button">Return to Event Page</button></a>
+		<a href='event.php?userID=<?php echo $user?>&event=<?php echo $event?>&type=<?php echo $type?>'> <button class = "button">Return to Event Page</button></a>
 		<?php 
 		mysqli_close($conn)
 		?>
