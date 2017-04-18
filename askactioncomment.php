@@ -19,24 +19,24 @@
 
 	$sql="INSERT INTO comments (eventID, comment, username)
 	VALUES ('$event', '$_POST[comment]', '$user')";
-	
+	?><article><?php
 	if (!mysqli_query($conn, $sql)){
 		die('Error: ' . mysql_error());}
 	echo '<h3>'."Left Comment";
- 
+	?></article><?php
 	mysqli_close($conn)
 
 ?>
 <html>
 	<head>
 		<title>Leaving A Comment</title>
-		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link rel="stylesheet" type="text/css" href="style1.css" />
 	</head>
 	<body><br><br>
 		
-		
+		<br><article>
 		<a href='event.php?event=<?php echo $event ?>&userID=<?php echo $user; ?>&type=<?php echo $type?>' class = "button">Return to Event Page<br></a>
-		</br>
+		</br></article>
 				
 	</body>
 </html>

@@ -25,6 +25,7 @@
 			$result = mysqli_query($con,"SELECT * FROM Events WHERE category = 'Public'");
 			$user = $_GET['userID'];
 			$type = $_GET['type'];
+
 			
 			?><br><br><sidebar><?php
 			if($type == "Admin"){

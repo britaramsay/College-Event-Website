@@ -92,16 +92,20 @@
 <br>
 <article>	
 	<?php 
+
 	$result = mysqli_query($conn, "SELECT * FROM comments WHERE eventID = '$event'");
 			// View Results
 	if (mysqli_num_rows($result) > 0) {
 		echo '<h3>'."Comments".'</h3>';
 		while($row = mysqli_fetch_assoc($result)) {
+
 			echo '<p>'."''".$row["comment"]."''"." by ".$row["username"];
 			if($row['username'] == $user){
 				$com = $row['commentID'];
+				
 				?>
-				<a href ='deletecomment.php?userID=<?php echo $user; ?>&eventID=<?php echo $event?>&type=<?php echo $type?> &comment=<?php echo $com?>'> <button class = "button">Delete</button></a>
+				<a href ='deletecomment.php?userID=<?php echo $user; ?>&eventID=<?php echo $event?>&type=<?php echo $type?>&comment=<?php echo $com?>'> <button class = "button">Delete</button></a>
+				<a href ='editcomment.php?userID=<?php echo $user; ?>&eventID=<?php echo $event?>&type=<?php echo $type?>&comment=<?php echo $com?>'> <button class = "button">Edit</button></a>				
 				<?php
 			}
 		}

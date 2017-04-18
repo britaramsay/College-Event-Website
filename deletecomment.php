@@ -20,13 +20,13 @@
 	$event = $_GET['eventID'];
 	$commentID = $_GET['comment'];
 	
-	$sql = "DELETE * FROM comments WHERE commentID = '$commentID'";
+	$sql = "DELETE FROM comments WHERE commentID = '$commentID'";
 	if (mysqli_query($conn, $sql)) {
 		echo "Record deleted successfully";
 	}
 	
 	?>
-	<a href='event.php?userID=<?php echo $user; ?>&event=<?php echo $event?>&type=<?php echo $type?>>'> <button class = "button">Return to Student Homepage</a>
+	<a href='event.php?userID=<?php echo $user; ?>&event=<?php echo $event?>&type=<?php echo $type?>>'> <button class = "button">Return to Event Page</button></a>
 	<?php
 
 	mysqli_close($conn)
@@ -35,7 +35,7 @@
 <html>
 	<head>
 		<title>Deleting Comment</title>
-		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link rel="stylesheet" type="text/css" href="style1.css" />
 	</head>
 	<body>
 	</body>
