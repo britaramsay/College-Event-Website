@@ -28,15 +28,15 @@
 		
 		<article>
 			<form method ='POST' action='editcomment2.php?userID=<?php echo $user?>&type=<?php echo $type?>&eventID=<?php echo $event?>&comment=<?php echo $comment?>'>
-				<h3>Leave a Comment:</h3>
-				<textarea name='newcomm' id='newcomm'></textarea><br />		
-				<input type='submit' value='Submit' />  
+				<h3>Edit Comment:</h3>
+				<textarea rows="7" cols="85" name='newcomm' id='newcomm' placeholder = "Rewrite your comment"></textarea><br />		
+				<br><input type='submit' value='Submit' />  
 			</form>
 		</article>
 		<?php
-		?>
+		?><br><article>
 		<a href='event.php?userID=<?php echo $user?>&event=<?php echo $event?>&type=<?php echo $type?>'> <button class = "button">Return to Event Page</button></a>
-		<?php 
+		</article><?php 
 		mysqli_close($conn)
 		?>
 	</body>
