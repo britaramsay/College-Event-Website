@@ -73,7 +73,6 @@
 					// get rsoIDs that user is admin for
 					while($rowrsos = mysqli_fetch_assoc($resultrsos)) {
 						$id = $rowrsos["rsoID"];
-						
 						$resultevent = mysqli_query($con, "SELECT eventID FROM rsoevents WHERE rsoID = '$id'");
 						if (mysqli_num_rows($resultevent) > 0) {
 							// get eventIDs of events by this RSO
@@ -123,7 +122,6 @@
 					// get rsoIDs that user is in
 					while($rowrsos = mysqli_fetch_assoc($resultrsos)) {
 						$id = $rowrsos["rsoID"];
-						
 						$resultevent = mysqli_query($con, "SELECT eventID FROM rsoevents WHERE rsoID = '$id'");
 						if (mysqli_num_rows($resultevent) > 0) {
 							// get eventIDs of events by this RSO
@@ -146,7 +144,7 @@
 									<?php
 								}
 								} else {
-									echo "No Public Events";
+									echo "No RSO Events";
 								}
 							}
 						}
@@ -160,12 +158,22 @@
 				}
 			}
 			?></article><br><article><?php
-
-			// Get Private events
-			$resultinfo = mysqli_query($con,"SELECT university FROM students WHERE username = '$user'");
-			$rowsinfo = mysqli_fetch_assoc($resultinfo);
-			// Get email and school
-			$school = $rowsinfo["university"];
+			
+			if($type == "Student"){
+				// Get Private events
+				$resultinfo = mysqli_query($con,"SELECT university FROM students WHERE username = '$user'");
+				$rowsinfo = mysqli_fetch_assoc($resultinfo);
+				// Get email and school
+				$school = $rowsinfo["university"];	
+			}
+			
+			if($type == "Admin"){
+				// Get Private events
+				$resultinfo = mysqli_query($con,"SELECT university FROM admins WHERE username = '$user'");
+				$rowsinfo = mysqli_fetch_assoc($resultinfo);
+				// Get email and school
+				$school = $rowsinfo["university"];	
+			}
 			
 			echo '<h3>'."Private Events at ".$school.'</h3>';
 			$resultpriv = mysqli_query($con, "SELECT eventID FROM privateevents WHERE university = '$school'");

@@ -24,7 +24,7 @@
 		<br><input type='submit' value='Submit' name='submit'/><br>
 		
 		<!--Register-->
-		<p><label style = "font-size: 14px;"> Don't have an account? </label>
+		<p><label style = "font-size: 15px;"> Don't have an account? </label>
 		<a href="register.php" class="button" style ="font-size: 14px;">Register</a><br>
 	
 	</fieldset>

@@ -29,9 +29,10 @@
 		die('Error: Student emails must have the same domain.');}
 		
 	for($x = 0; $x <= 4; $x++){
-		$result3 = mysqli_query($conn, "SELECT * FROM students WHERE email = 'stuID[$x]'");
+		$temp = $stuID[$x];
+		$result3 = mysqli_query($conn, "SELECT * FROM students WHERE email = '$temp'");
 		
-		if (mysqli_num_rows($result3) == 0) {
+		if (mysqli_num_rows($result3) < 1) {
 			die('<p>'.'Error: no email: '.$stuID[$x].' registered'.'<br>'. mysql_error());}
 	}
 
@@ -66,8 +67,8 @@
 ?>
 <html>
 	<head>
-		<title>Added RSO</title>
-		<link rel="stylesheet" type="text/css" href="style.css" />
+		<title><p>Added RSO</p></title>
+		<link rel="stylesheet" type="text/css" href="style1.css" />
 	</head>
 	<body>
 		<br><br>

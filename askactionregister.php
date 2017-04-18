@@ -35,7 +35,7 @@
 <html>
 	<head>
 		<title>Student Registration</title>
-		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link rel="stylesheet" type="text/css" href="style1.css" />
 	</head>
 	<body><br><br>
 		<a href="login.php" class = "button">Return to Login Page</a>

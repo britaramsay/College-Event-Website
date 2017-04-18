@@ -61,7 +61,7 @@
 					}
 			} 
 			else 
-				echo "No RSOs";
+				echo '<p>'."No RSOs";
 			?>
 			</article><br><article>
 			<?php

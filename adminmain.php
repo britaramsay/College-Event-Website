@@ -14,7 +14,7 @@
 	<section class = "Admin Main">
 	<h3>Welcome Admin!</h3>
 	<?php			
-		echo '<p>'."Logged in as ".$user;
+		echo '<p1><i>'."Logged in as ".$user.'</i>';
 	?>
 	<br><br><a href = 'logout.php'> <button class = "button">Logout</button></a>
 	</section>
