@@ -84,8 +84,8 @@
 <article>
 	<form method ='POST' action='askactioncomment.php?userID=<?php echo $user?>&type=<?php echo $type?>&event=<?php echo $event?>'>
 		<h3>Leave a Comment:</h3>
-		<textarea name='comment' id='comment'></textarea><br />		
-		<input type='submit' value='Submit' />  
+		<textarea rows="7" cols="85" name='comment' id='comment' placeholder="Write Something Here.."></textarea><br />		
+		<br><input type='submit' value='Submit' />  
 	</form>
 </article>
 	
