@@ -27,7 +27,9 @@
 			$type = $_GET['type'];
 
 			
-			?><br><br><sidebar><?php
+			?><br><br>
+	<sidebar>
+			<?php
 			if($type == "Admin"){
 				?><br><a href = 'adminmain.php?userID=<?php echo $user; ?>'> <button class = 'button'>Return to Admin Homepage</button></a><?php
 			}
@@ -36,9 +38,13 @@
 				<br><a href = 'studentmain.php?userID=<?php echo $user; ?>&type=<?php echo $type?>'> <button class = "button">Return to Student Homepage</button></a>
 				<?php
 			}
-			?></sidebar><?php
+			?>
+	</sidebar>
+			<?php
 			
-			?><br><article><?php
+			?><br>
+	<article>
+			<?php
 			echo '<h3>'."Public Events".'</h3>';
 			
 			if (mysqli_num_rows($result) > 0) {
@@ -105,7 +111,7 @@
 					}
 				}
 				else{
-					echo '<p>'."Not in any RSOs";
+					echo '<p>'."Not admin of any RSOs";
 					
 				}
 			}

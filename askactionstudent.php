@@ -39,22 +39,30 @@
 	$sql="INSERT INTO rsos(name, adminID, description)
 	VALUES ('$_POST[name]', '$_POST[adminID]', '$_POST[description]')";
 	
-	$sql1 = "INSERT INTO admins(email, university, username)
-	VALUES ('$_POST[adminID]', '$_POST[university]', '$_POST[username]')";
+	$temp = $_POST['username'];
+	$email = $_POST['adminID'];
 	
+	$result4 = mysqli_query($conn, "SELECT * FROM admins WHERE username = '$temp'");
+
+	if (mysqli_num_rows($result4) < 1) {
+		$sql1 = "INSERT INTO admins(email, university, username)
+		VALUES ('$_POST[adminID]', '$_POST[university]', '$_POST[username]')";
+		
+		if (!mysqli_query($conn, $sql1)){
+			die('Error: ' . mysql_error());}
+		echo '<p>'."RSO Added";	
+	}	
 	// add students to inrso table
-	$sql2="SELECT MAX(rsoID) FROM inrso";
+	$sql2="SELECT rsoID FROM rsos WHERE adminID = '$email'";
 	$result = mysqli_query($conn, $sql2);	
 	$row = mysqli_fetch_assoc($result);
-	$rsoID = $row['MAX(rsoID)'] + 1;
+	$rsoID = $row['rsoID'];
 	
 	
 	if (!mysqli_query($conn, $sql)){
 		die('Error: not in rso' . mysql_error());}
 
-	if (!mysqli_query($conn, $sql1)){
-		die('Error: ' . mysql_error());}
-	echo '<p>'."RSO Added";
+	
  
 	for($x = 0; $x <= 4; $x++){
 		$sql4="INSERT INTO inrso(rsoID, studentID) VALUES ('$rsoID', '$stuID[$x]')";

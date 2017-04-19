@@ -72,7 +72,6 @@
 	?>
 	</article><br><article>
 	<?php
-	
 	$sql="SELECT * FROM inrso WHERE rsoID = '$rso'";
 	$result = mysqli_query($conn, $sql);
 	echo '<h3>'."Members: ".'</h3>';
